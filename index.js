@@ -15,4 +15,26 @@ var someOme = {
 };
 typeof (someOme.age) === undefined ?
     console.log(someOme.firstname + " " + someOme.lastname + " is " + someOme.age + " years old")
-    : console.log(someOme.firstname + " " + someOme.lastname + " got not age;");
+    : console.log(someOme.firstname + " " + someOme.lastname + " got no age;");
+var races;
+(function (races) {
+    races["Golden"] = "Golden";
+    races["Rott"] = "Rott";
+    races["Pit"] = "Pit";
+    races["Staffie"] = "Staffie";
+    races["Corgi"] = "Corgi";
+})(races || (races = {}));
+var myDog = {
+    race: races.Staffie,
+    name: "Ralph",
+    colors: ["grey", "white"],
+    origin: "UK",
+    age: 1,
+    birthday: new Date('2022-10-30'),
+    meals: ["dogfood", 2],
+    isCool: true
+};
+function whosDatDogg(dog) {
+    return "This dog is a ".concat(dog.race, ", his name is ").concat(dog.name, ", and he is ").concat(dog.colors, ". This race comes from ").concat(dog.origin, ". ").concat(dog.name, " \n    got ").concat(dog.age, " year(s) old and he is born the ").concat(dog.birthday, ". ").concat(dog.name, " eats ").concat(dog.meals[0], " ").concat(dog.meals[1], " times each day.");
+}
+console.log(whosDatDogg(myDog));
