@@ -82,3 +82,13 @@ const puertoEscondido: Town = {
   latitude: 15.857163238,
   longitude: -97.066999732,
 };
+
+//génériques
+function myMagicBox<T>(content: T): T {
+    console.log("I got something (" + content + ") in my magic box");
+    return content;
+}
+
+const stringInTheBox = myMagicBox<string>("Hey");
+const numInTheBox = myMagicBox<number>(2023);
+
